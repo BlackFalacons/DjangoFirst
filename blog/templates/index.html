@@ -1,15 +1,13 @@
-<html>
-    <head>
-    </head>
-    <body>
-         {% for news in news%}
-        <div>
-            <h1>{{news.title}}</h1>
-            <p>{{news.content}}</p>
-            <small>{{news.publishing_date|timesince}} Önce</small>
-        </div>
-        {%endfor%}
-        {{form.as_p}}
-        <input type="submit">
-    </body>
-</html>
+        {% extends 'base.html' %}
+        {% block title %}Anasayfa {%endblock %}
+        {% block body %}
+        <div class="container mt-5">
+                    {% for news in news%}
+                        <div>
+                            <h1>{{news.title}}</h1>
+                            <p>{{news.content}}</p>
+                            <small>{{news.publishing_date|timesince}} Önce</small>
+                        </div>
+                    {%endfor%}
+            </div>
+         {% endblock %}      
